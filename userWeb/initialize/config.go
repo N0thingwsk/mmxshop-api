@@ -5,14 +5,15 @@ import (
 	"mxshop-api/userWeb/config"
 )
 
-func InitConfig(serverConfig *config.ServerConfig) error {
+func InitConfig() error {
 	v := viper.New()
-	v.SetConfigFile("../config.yaml")
+	v.SetConfigFile("./config.yaml")
 	err := v.ReadInConfig()
 	if err != nil {
 		return err
 	}
-	err = v.Unmarshal(serverConfig)
+
+	err = v.Unmarshal(&config.UserServerConfig)
 	if err != nil {
 		return err
 	}

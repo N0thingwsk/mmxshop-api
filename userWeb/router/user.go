@@ -9,5 +9,7 @@ func InitUserRouter(router *gin.RouterGroup) {
 	UserRouter := router.Group("user")
 	{
 		UserRouter.GET("list", api.GetUserList)
+		UserRouter.POST("login", api.PassWordLogin)
 	}
+
 }

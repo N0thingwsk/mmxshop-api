@@ -9,3 +9,5 @@ type ServerConfig struct {
 	ServerName string        `mapstructure:"name"`
 	UserConfig UserSrvConfig `mapstructure:"userSrv"`
 }
+
+var UserServerConfig *ServerConfig
